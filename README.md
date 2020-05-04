@@ -51,7 +51,7 @@ Full documentation for deployment to Azure App Service can be found here: [Deplo
 ## File Structure
 
 The back-end is based on [Flask](https://github.com/pallets/flask).
-The front-end is based on [Angular cli "ng"](https://angular.io/cli).
+The front-end is based on [Angular](https://angular.io).
 
 The front-end is served on http://localhost:3000/ and the back-end on http://localhost:3001/.
 
