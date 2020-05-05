@@ -4,9 +4,9 @@ const fse = require("fs-extra");
 const childProcess = require("child_process");
 
 if (fs.existsSync("./build")) {
-  fse.removeSync("./build");
+    fse.removeSync("./build");
 }
 
-childProcess.execSync("ng build", { stdio: "inherit" });
+childProcess.execSync("ng build", {stdio: "inherit"});
 
-fse.moveSync("./build", "./server/build", { overwrite: true });
+fse.moveSync("./build", "./server/build", {overwrite: true});
