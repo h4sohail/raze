@@ -1,0 +1,41 @@
+.section-search {
+    height: calc(100vh - 60px);
+    display: flex;
+    align-items: center;
+}
+
+.form-control.search-input.nav-search {
+    min-width: 350px;
+}
+
+.centerDiv {
+    background-color: #000000cc;
+    height: auto;
+    width: 440px;
+    border-radius: 10px;
+    padding: 14px 0;
+}
+
+.recentBtn {
+    background-color: #db133b61;
+    color: #fff;
+    display: inline-block;
+    border-radius: 20px;
+    padding: 6px 20px;
+    margin-right: 20px;
+    border: 1px solid #db133b;
+}
+
+.favoritesBtn {
+    background-color: #000;
+    /*border-color: #db133b;*/
+    border: 1px solid #db133b;
+    color: #fff;
+    border-radius: 20px;
+    padding: 6px 20px;
+    display: inline-block;
+}
+
+.text-search {
+    color: #db133b;
+}

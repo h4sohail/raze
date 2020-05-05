@@ -1,0 +1,127 @@
+.card {
+    background-color: rgba(10, 4, 7, 0.8);
+    margin: 1px 0px;
+    border: none;
+}
+
+.card-game {
+    background-color: rgba(10, 4, 7, 0.8);
+}
+
+.card-body .table tr td {
+    border-top: 3px solid #000000;
+    padding: 1px;
+    vertical-align: middle;
+}
+
+.card-score {
+    background-color: rgba(10, 4, 7, 0.8);
+    border-radius: 120px;
+    padding: 10px;
+}
+
+.mr-3.media-img.img-fluid.border {
+    border: 2px solid #530716 !important;
+}
+
+.btn.btn-card {
+    background-color: #53071600;
+    color: #fff;
+    border-color: #db133b;
+    padding: 4px 9px;
+}
+
+.btn.btn-card:hover {
+    background: #db133b;
+}
+
+.score-img {
+    border-radius: 120px;
+    background-color: #000000d6;
+    border: 1.5px solid red;
+    height: 76px;
+}
+
+.first-img img {
+    background-color: #000000d6;
+    border: 1.5px solid red;
+    height: 76px;
+    vertical-align: middle;
+    height: 90px;
+    width: 90px;
+}
+
+.last-img img {
+    opacity: 0.7;
+    height: 100px;
+}
+
+.table.table-dark.text-center {
+    background-color: rgba(0, 0, 0, .03);
+}
+
+.table-dark thead th {
+    border-color: transparent !important;
+}
+
+.bg-pink {
+    cursor: pointer;
+    background-color: #db133b30;
+}
+
+.bg-green {
+    cursor: pointer;
+    background-color: #28a74542;
+}
+
+.modal-dialog {
+    max-width: 90%;
+}
+
+.modal-content {
+    background-image: url(../../assets/img/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0px;
+}
+
+.modal-content .close {
+    width: 100%;
+    padding: 10px;
+    text-align: end;
+    color: #fff;
+}
+
+.modal-header.border-bottom-0 {
+    padding: 8px 15px;
+    color: transparent;
+    opacity: 1;
+}
+
+.modal-table {
+    padding: 10px;
+    background-color: #6c757d78;
+    color: #fff;
+}
+
+.modal-table .table tr td {
+    border-top: 3px solid #4f4c50;
+}
+
+.modal-table .table tr .firstTd {
+    background-color: #f0f8ff1f;
+}
+
+.secondTd1 {
+    background-color: #20c997cc;
+    border-left: 4px solid #4f4c4f;
+}
+
+.modal-table .table-hover tbody tr:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 0, .075);
+}
+
+.table-borderless thead tr th, .table tbody tr td {
+    border: 0 solid #dee2e6 !important;
+}
