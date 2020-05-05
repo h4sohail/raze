@@ -1,20 +1,26 @@
-﻿import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { SearchComponent } from './search/search.component';
+import { ResultComponent } from './result/result.component';
+
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./app-shell/list/list.module').then(module => module.ListModule)
+    component: SearchComponent
   },
   {
-    path: 'blank',
-    loadChildren: () => import('./app-shell/blank/blank.module').then(module => module.BlankModule)
+    path: 'search',
+    component: SearchComponent
   },
+  {
+    path: 'result',
+    component: ResultComponent
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
