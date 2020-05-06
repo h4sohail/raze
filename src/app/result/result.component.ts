@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { SearchService } from '../search.service';
-import { Account } from '../interface/acccount';
+import { Account } from '../util/acccount';
 
 @Component({
     selector: 'app-result',
@@ -37,8 +37,5 @@ export class ResultComponent implements OnInit {
 
     getAccountLosses(){
         return this.account.losses;
-    }
-
-    getAccountRankImage(){
     }
 }

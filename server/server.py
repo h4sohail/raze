@@ -13,13 +13,11 @@ app = Flask(__name__, static_folder='build')
 # List Endpoints
 @app.route(CONSTANTS['ENDPOINT']['UPDATE'])
 def update():
-    riot_id = "nullptr#0001"
     return jsonify(sample_data)
 
 
 @app.route(CONSTANTS['ENDPOINT']['SEARCH'])
 def search():
-    riot_id = "nullptr#0001"
     return jsonify(sample_data)
 
 
@@ -36,7 +34,7 @@ def catch_all(path):
 @app.errorhandler(404)
 def page_not_found(error):
     json_response = jsonify({'error': 'Page not found'})
-    return make_response(json_response, CONSTANTS['HTTP_STATUS']['404_NOT_FOUND'])
+    return make_response(json_response, 404)
 
 
 if __name__ == '__main__':
