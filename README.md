@@ -18,13 +18,16 @@ The front-end is served on http://localhost:3000/ and the back-end on http://loc
 
 ```
 .
-├── server/ - Flask server that provides API routes and serves front-end
+├── server/ - Flask server that provides API routes
 │ ├── constants.py - Defines the constants for the endpoints and port
-│ ├── sampleData.py - Contains all sample text data for generate pages
-│ └── server.py - Configures Port and HTTP Server and provides API routes
+│ ├── sampleData.py - Contains the sample API request data
+│ └── server.py - Configures the Port, HTTP Server and provides API routes
 ├── src - Angular front-end
 │ └── app - Angular main root module
 │    ├── app-shell - Angular main components
+|    ├── result - Result page component
+|    ├── search - Search page component
+|    ├── util - Additional classes and methods
 │    └── app.module.ts - Angular root module.
 └── README.md
 ```
