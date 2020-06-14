@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../search.service';
 import { Account } from '../util/acccount';
 
@@ -14,28 +14,28 @@ export class ResultComponent implements OnInit {
 
     ngOnInit(): void {
         this.stats$ = this.searchService.fetchStats();
-        this.searchService.fetchStats().subscribe((res : Account) => { 
+        this.searchService.fetchStats().subscribe((res: Account) => {
             this.account = res;
-        })
+        });
     }
 
     fetchStats() {
         this.stats$ = this.searchService.fetchStats();
     }
 
-    getAccountName(){
+    getAccountName() {
         return this.account.name;
     }
 
-    getAccountRank(){
+    getAccountRank() {
         return this.account.rank;
     }
 
-    getAccountWins(){
+    getAccountWins() {
         return this.account.wins;
     }
 
-    getAccountLosses(){
+    getAccountLosses() {
         return this.account.losses;
     }
 }

@@ -6,9 +6,9 @@ import { Backend } from './util/backend';
 export class SearchService {
 
     constructor(private http: HttpClient) {}
-    
+
     fetchStats() {
-        let backend = new Backend
+        const backend = new Backend()
         return this.http.get(backend.getSearchAPI());
     }
 }

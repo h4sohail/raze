@@ -1,12 +1,12 @@
-const SEARCH: string = '/api-v1/search';
-const UPDATE: string = '/api-v1/update';
+const SEARCH = '/api-v1/search';
+const UPDATE = '/api-v1/update';
 
-export class Backend{
-    getSearchAPI(){
+export class Backend {
+    getSearchAPI() {
         return SEARCH;
     }
-    
-    getUpdateAPI(){
+
+    getUpdateAPI() {
         return UPDATE;
     }
 }
