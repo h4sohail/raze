@@ -1,7 +1,6 @@
 ﻿import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
-import { SearchComponent } from '../../search/search.component';
 
 @Component({
   selector: 'app-nav-bar',
