@@ -56,6 +56,12 @@
     height: 100px;
 }
 
+@media (max-width:629px) {
+    .last-img {
+      display: none;
+    }
+  }
+
 .table.table-dark.text-center {
     background-color: rgba(0, 0, 0, .03);
 }

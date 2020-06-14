@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../search.service';
-import { Account } from '../util/account';
+import { Account } from '../util/search.model';
 
 @Component({
     selector: 'app-result',

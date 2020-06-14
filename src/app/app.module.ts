@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { ResultComponent } from './result/result.component';
 import { NavBarComponent } from './app-shell/nav-bar/nav-bar.component';
-import { FooterComponent } from './app-shell/footer/footer.component';
+import { FooterComponent } from './app-shell/footer/footer.component';;
 
 
 @NgModule({
@@ -37,5 +37,6 @@ import { FooterComponent } from './app-shell/footer/footer.component';
     ],
     bootstrap: [AppComponent]
 })
+
 export class AppModule {
 }
