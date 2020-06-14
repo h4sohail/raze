@@ -10,8 +10,8 @@ import { SearchService } from './search.service';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
 import { ResultComponent } from './result/result.component';
-import { NavBarComponent } from './app-shell/nav-bar/nav-bar.component';
-import { FooterComponent } from './app-shell/footer/footer.component';
+import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 
 @NgModule({
