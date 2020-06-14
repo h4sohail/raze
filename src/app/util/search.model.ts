@@ -7,7 +7,5 @@ export interface Account{
 }
 
 export interface Match{
-    kda: string;
-    score: number;
-    win: boolean;
+    [index: number]: { kda: string; score: number; win: boolean, rounds_won: number, rounds_lost: number };
 }

@@ -2,6 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-3">
+                <!-- Basic Info Start -->
                 <div class="card-game p-3 mb-3">
                     <div class="media" style="margin: -17px;padding: 10px;"><img class="mr-3 media-img img-fluid border"
                                                                                  src="assets/img/{{ getAccountRank() }}.png" width="90"
@@ -17,6 +18,8 @@
                         </div>
                     </div>
                 </div>
+                <!-- Basic Info End -->
+                <!-- Agent History Start -->
                 <div class="card-score mb-3">
                     <div class="media align-self-center"><img class="mr-3 img-fluid rounded-circle score-img"
                                                               src="assets/img/player1-1.png" width="76">
@@ -26,10 +29,12 @@
                         </div>
                     </div>
                 </div>
+                <!-- Agent History End -->
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-9">
                 <div role="tablist" id="accordion-1">
-                    <div class="card">
+                    <!-- Match History Start -->
+                    <div *ngFor="let match of getAccountMatches()" class="card">
                         <div class="card-header" role="tab">
                             <h5 class="mb-0">
                                 <a data-toggle="collapse" aria-expanded="true" aria-controls="accordion-1 .item-1"
@@ -38,13 +43,16 @@
                                                                 src="assets/img/player1-1.png"></div>
                                     <div class="accor-txt align-self-center">
                                         <p class="mb-0">KDA :&nbsp;<span
-                                                class="font-weight-bold">&nbsp;33/18/5<br></span></p>
-                                        <p class="mb-0">Score 9,762:&nbsp;<span class="font-weight-bold">&nbsp;TEAM
+                                                class="font-weight-bold">&nbsp;{{ match['kda'] }}<br></span></p>
+                                        <p class="mb-0">Score {{ match['score'] }}:&nbsp;<span class="font-weight-bold">&nbsp;TEAM
                                                 MVP<br></span></p>
                                     </div>
                                     <div class="accor-txt align-self-center text-center">
-                                        <h5>DEFEAT<br> 12-13<br></h5>
+                                        <h5 *ngIf="match['win']; else matchLost">WON</h5>{{ match['rounds_won'] }}-{{ match['rounds_lost'] }}
                                     </div>
+                                    <ng-template #matchLost>
+                                        DEFEAT<br>
+                                    </ng-template>
                                     <div class="last-img"><img class="img-fluid" src="assets/img/city1.png"></div>
                                 </a>
                             </h5>
@@ -173,301 +181,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="card-header" role="tab">
-                            <h5 class="mb-0">
-                                <a data-toggle="collapse" aria-expanded="false" aria-controls="accordion-1 .item-2"
-                                   href="#accordion-1 .item-2" class="d-flex justify-content-between text-white">
-                                    <div class="first-img"><img class="img-fluid rounded-circle"
-                                                                src="assets/img/player1-1.png"></div>
-                                    <div class="accor-txt align-self-center">
-                                        <p class="mb-0">KDA :&nbsp;<span
-                                                class="font-weight-bold">&nbsp;33/18/5<br></span></p>
-                                        <p class="mb-0">Score 9,762:&nbsp;<span class="font-weight-bold">&nbsp;TEAM
-                                                MVP<br></span></p>
-                                    </div>
-                                    <div class="accor-txt align-self-center text-center">
-                                        <h5>DEFEAT<br> 12-13<br></h5>
-                                    </div>
-                                    <div class="last-img"><img class="img-fluid" src="assets/img/city1.png"></div>
-                                </a>
-                            </h5>
-                        </div>
-                        <div class="collapse item-2" role="tabpanel" data-parent="#accordion-1">
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-dark text-center">
-                                        <thead>
-                                        <tr class="border-none">
-                                            <th>Player</th>
-                                            <th>AVG COMBAT SCORE<br></th>
-                                            <th>KDA<br></th>
-                                            <th><strong>ECON RATING</strong><br></th>
-                                            <th><strong>FIRST BLOODS</strong><br></th>
-                                            <th><strong>PLANTS</strong><br></th>
-                                            <th><strong>DEFUSES</strong><br></th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr class="bg-pink" data-toggle="modal" data-target=".modal-result"
-                                            style="font-size: 15px;height: 72px;width: 803px;background-color: rgba(40,167,69,0.26);">
-                                            <td><img src="assets/img/player1-1.png" style="height: 64px;">John</td>
-                                            <td>478<br></td>
-                                            <td>36 / 15 / 5<br></td>
-                                            <td>112<br></td>
-                                            <td>4</td>
-                                            <td>3</td>
-                                            <td>0</td>
-                                        </tr>
-                                        <tr class="bg-pink" data-toggle="modal" data-target=".modal-result"
-                                            style="font-size: 15px;height: 72px;width: 803px;">
-                                            <td><img src="assets/img/player1-1.png" style="height: 64px;">John</td>
-                                            <td style="font-size: 15px;">478<br></td>
-                                            <td style="font-size: 15px;">36 / 15 / 5<br></td>
-                                            <td>112<br></td>
-                                            <td>4</td>
-                                            <td>3</td>
-                                            <td>0</td>
-                                        </tr>
-                                        <tr class="bg-pink" data-toggle="modal" data-target=".modal-result"
-                                            style="font-size: 15px;height: 72px;width: 803px;">
-                                            <td><img src="assets/img/player1-1.png" style="height: 64px;">John</td>
-                                            <td style="font-size: 15px;">478<br></td>
-                                            <td style="font-size: 15px;">36 / 15 / 5<br></td>
-                                            <td>112<br></td>
-                                            <td>4</td>
-                                            <td>3</td>
-                                            <td>0</td>
-                                        </tr>
-                                        <tr class="bg-pink" data-toggle="modal" data-target=".modal-result"
-                                            style="font-size: 15px;height: 72px;width: 803px;background-color: rgba(40,167,69,0.26);">
-                                            <td><img src="assets/img/player1-1.png" style="height: 64px;">John</td>
-                                            <td style="font-size: 15px;">478<br></td>
-                                            <td style="font-size: 15px;">36 / 15 / 5<br></td>
-                                            <td>112<br></td>
-                                            <td>4</td>
-                                            <td>3</td>
-                                            <td>0</td>
-                                        </tr>
-                                        <tr class="bg-pink" data-toggle="modal" data-target=".modal-result"
-                                            style="font-size: 15px;height: 72px;width: 803px;">
-                                            <td><img src="assets/img/player1-1.png" style="height: 64px;">John</td>
-                                            <td style="font-size: 15px;">478<br></td>
-                                            <td style="font-size: 15px;">36 / 15 / 5<br></td>
-                                            <td>112<br></td>
-                                            <td>4</td>
-                                            <td>3</td>
-                                            <td>0</td>
-                                        </tr>
-                                        <tr class="bg-pink" data-toggle="modal" data-target=".modal-result"
-                                            style="font-size: 15px;height: 72px;width: 803px;">
-                                            <td><img src="assets/img/player1-1.png" style="height: 64px;">John</td>
-                                            <td style="font-size: 15px;">478<br></td>
-                                            <td style="font-size: 15px;">36 / 15 / 5<br></td>
-                                            <td>112<br></td>
-                                            <td>4</td>
-                                            <td>3</td>
-                                            <td>0</td>
-                                        </tr>
-                                        <tr class="bg-pink" data-toggle="modal" data-target=".modal-result"
-                                            style="font-size: 15px;height: 72px;width: 803px;background-color: rgba(40,167,69,0.26);">
-                                            <td><img src="assets/img/player1-1.png" style="height: 64px;">John</td>
-                                            <td style="font-size: 15px;">478<br></td>
-                                            <td style="font-size: 15px;">36 / 15 / 5<br></td>
-                                            <td>112<br></td>
-                                            <td>4</td>
-                                            <td>3</td>
-                                            <td>0</td>
-                                        </tr>
-                                        <tr class="bg-pink" data-toggle="modal" data-target=".modal-result"
-                                            style="font-size: 15px;height: 72px;width: 803px;">
-                                            <td><img src="assets/img/player1-1.png" style="height: 64px;">John</td>
-                                            <td style="font-size: 15px;">478<br></td>
-                                            <td style="font-size: 15px;">36 / 15 / 5<br></td>
-                                            <td>112<br></td>
-                                            <td>4</td>
-                                            <td>3</td>
-                                            <td>0</td>
-                                        </tr>
-                                        <tr class="bg-pink" data-toggle="modal" data-target=".modal-result"
-                                            style="font-size: 15px;height: 72px;width: 803px;background-color: rgba(40,167,69,0.26);">
-                                            <td><img src="assets/img/player1-1.png" style="height: 64px;">John</td>
-                                            <td style="font-size: 15px;">478<br></td>
-                                            <td style="font-size: 15px;">36 / 15 / 5<br></td>
-                                            <td>112<br></td>
-                                            <td>4</td>
-                                            <td>3</td>
-                                            <td>0</td>
-                                        </tr>
-                                        <tr class="bg-pink" data-toggle="modal" data-target=".modal-result"
-                                            style="font-size: 15px;height: 72px;width: 803px;background-color: rgba(40,167,69,0.26);">
-                                            <td style="font-size: 15px;"><img src="assets/img/player1-1.png"
-                                                                              style="height: 64px;">John
-                                            </td>
-                                            <td>478<br></td>
-                                            <td style="font-size: 15px;">36 / 15 / 5<br></td>
-                                            <td>112<br></td>
-                                            <td>4</td>
-                                            <td>3</td>
-                                            <td>0</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" role="tab">
-                            <h5 class="mb-0">
-                                <a data-toggle="collapse" aria-expanded="false" aria-controls="accordion-1 .item-3"
-                                   href="#accordion-1 .item-3" class="d-flex justify-content-between text-white">
-                                    <div class="first-img"><img class="img-fluid rounded-circle"
-                                                                src="assets/img/player1-1.png"></div>
-                                    <div class="accor-txt align-self-center">
-                                        <p class="mb-0">KDA :&nbsp;<span
-                                                class="font-weight-bold">&nbsp;33/18/5<br></span></p>
-                                        <p class="mb-0">Score 9,762:&nbsp;<span class="font-weight-bold">&nbsp;TEAM
-                                                MVP<br></span></p>
-                                    </div>
-                                    <div class="accor-txt align-self-center text-center">
-                                        <h5>DEFEAT<br> 12-13<br></h5>
-                                    </div>
-                                    <div class="last-img"><img class="img-fluid" src="assets/img/city1.png"></div>
-                                </a>
-                            </h5>
-                        </div>
-                        <div class="collapse item-3" role="tabpanel" data-parent="#accordion-1">
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-dark text-center">
-                                        <thead>
-                                        <tr class="border-none">
-                                            <th>Player</th>
-                                            <th>AVG COMBAT SCORE<br></th>
-                                            <th>KDA<br></th>
-                                            <th><strong>ECON RATING</strong><br></th>
-                                            <th><strong>FIRST BLOODS</strong><br></th>
-                                            <th><strong>PLANTS</strong><br></th>
-                                            <th><strong>DEFUSES</strong><br></th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr class="bg-pink" data-toggle="modal" data-target=".modal-result"
-                                            style="font-size: 15px;height: 72px;width: 803px;background-color: rgba(40,167,69,0.26);">
-                                            <td><img src="assets/img/player1-1.png" style="height: 64px;">John</td>
-                                            <td>478<br></td>
-                                            <td>36 / 15 / 5<br></td>
-                                            <td>112<br></td>
-                                            <td>4</td>
-                                            <td>3</td>
-                                            <td>0</td>
-                                        </tr>
-                                        <tr class="bg-pink" data-toggle="modal" data-target=".modal-result"
-                                            style="font-size: 15px;height: 72px;width: 803px;">
-                                            <td><img src="assets/img/player1-1.png" style="height: 64px;">John</td>
-                                            <td style="font-size: 15px;">478<br></td>
-                                            <td style="font-size: 15px;">36 / 15 / 5<br></td>
-                                            <td>112<br></td>
-                                            <td>4</td>
-                                            <td>3</td>
-                                            <td>0</td>
-                                        </tr>
-                                        <tr class="bg-pink" data-toggle="modal" data-target=".modal-result"
-                                            style="font-size: 15px;height: 72px;width: 803px;">
-                                            <td><img src="assets/img/player1-1.png" style="height: 64px;">John</td>
-                                            <td style="font-size: 15px;">478<br></td>
-                                            <td style="font-size: 15px;">36 / 15 / 5<br></td>
-                                            <td>112<br></td>
-                                            <td>4</td>
-                                            <td>3</td>
-                                            <td>0</td>
-                                        </tr>
-                                        <tr class="bg-pink" data-toggle="modal" data-target=".modal-result"
-                                            style="font-size: 15px;height: 72px;width: 803px;background-color: rgba(40,167,69,0.26);">
-                                            <td><img src="assets/img/player1-1.png" style="height: 64px;">John</td>
-                                            <td style="font-size: 15px;">478<br></td>
-                                            <td style="font-size: 15px;">36 / 15 / 5<br></td>
-                                            <td>112<br></td>
-                                            <td>4</td>
-                                            <td>3</td>
-                                            <td>0</td>
-                                        </tr>
-                                        <tr class="bg-pink" data-toggle="modal" data-target=".modal-result"
-                                            style="font-size: 15px;height: 72px;width: 803px;">
-                                            <td><img src="assets/img/player1-1.png" style="height: 64px;">John</td>
-                                            <td style="font-size: 15px;">478<br></td>
-                                            <td style="font-size: 15px;">36 / 15 / 5<br></td>
-                                            <td>112<br></td>
-                                            <td>4</td>
-                                            <td>3</td>
-                                            <td>0</td>
-                                        </tr>
-                                        <tr class="bg-pink" data-toggle="modal" data-target=".modal-result"
-                                            style="font-size: 15px;height: 72px;width: 803px;">
-                                            <td><img src="assets/img/player1-1.png" style="height: 64px;">John</td>
-                                            <td style="font-size: 15px;">478<br></td>
-                                            <td style="font-size: 15px;">36 / 15 / 5<br></td>
-                                            <td>112<br></td>
-                                            <td>4</td>
-                                            <td>3</td>
-                                            <td>0</td>
-                                        </tr>
-                                        <tr class="bg-pink" data-toggle="modal" data-target=".modal-result"
-                                            style="font-size: 15px;height: 72px;width: 803px;background-color: rgba(40,167,69,0.26);">
-                                            <td><img src="assets/img/player1-1.png" style="height: 64px;">John</td>
-                                            <td style="font-size: 15px;">478<br></td>
-                                            <td style="font-size: 15px;">36 / 15 / 5<br></td>
-                                            <td>112<br></td>
-                                            <td>4</td>
-                                            <td>3</td>
-                                            <td>0</td>
-                                        </tr>
-                                        <tr class="bg-pink" data-toggle="modal" data-target=".modal-result"
-                                            style="font-size: 15px;height: 72px;width: 803px;">
-                                            <td><img src="assets/img/player1-1.png" style="height: 64px;">John</td>
-                                            <td style="font-size: 15px;">478<br></td>
-                                            <td style="font-size: 15px;">36 / 15 / 5<br></td>
-                                            <td>112<br></td>
-                                            <td>4</td>
-                                            <td>3</td>
-                                            <td>0</td>
-                                        </tr>
-                                        <tr class="bg-pink" data-toggle="modal" data-target=".modal-result"
-                                            style="font-size: 15px;height: 72px;width: 803px;background-color: rgba(40,167,69,0.26);">
-                                            <td><img src="assets/img/player1-1.png" style="height: 64px;">John</td>
-                                            <td style="font-size: 15px;">478<br></td>
-                                            <td style="font-size: 15px;">36 / 15 / 5<br></td>
-                                            <td>112<br></td>
-                                            <td>4</td>
-                                            <td>3</td>
-                                            <td>0</td>
-                                        </tr>
-                                        <tr class="bg-pink" data-toggle="modal" data-target=".modal-result"
-                                            style="font-size: 15px;height: 72px;width: 803px;background-color: rgba(40,167,69,0.26);">
-                                            <td style="font-size: 15px;"><img src="assets/img/player1-1.png"
-                                                                              style="height: 64px;">John
-                                            </td>
-                                            <td>478<br></td>
-                                            <td style="font-size: 15px;">36 / 15 / 5<br></td>
-                                            <td>112<br></td>
-                                            <td>4</td>
-                                            <td>3</td>
-                                            <td>0</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Match History End -->
                 </div>
             </div>
         </div>
     </div>
-    
-    <!-- Overlay-->
-
+    <!-- Match Overlay-->
     <div class="modal fade modal-result" role="dialog" tabindex="-1"
          style="background-repeat: no-repeat;background-size: cover;">
         <div class="modal-dialog" role="document">

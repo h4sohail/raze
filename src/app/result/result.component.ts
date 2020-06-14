@@ -1,21 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../search.service';
-import { Account } from '../util/search.model';
+import { Account, Match } from '../util/search.model';
 
 @Component({
     selector: 'app-result',
     templateUrl: './result.component.html',
-    styleUrls: ['./result.component.css']
+    styleUrls: ['./result.component.css'],
 })
 export class ResultComponent implements OnInit {
     private account: Account;
+    private matches: Match[];
+
     stats$;
     constructor(private searchService: SearchService) {}
 
     ngOnInit(): void {
         this.stats$ = this.searchService.fetchStats();
-        this.searchService.fetchStats().subscribe((res: Account) => {
-            this.account = res;
+        this.searchService.fetchStats().subscribe((res) => {
+            this.account = res['account'];
+            this.matches = res['matches'];
         });
     }
 
@@ -38,4 +41,10 @@ export class ResultComponent implements OnInit {
     getAccountLosses() {
         return this.account.losses;
     }
+
+    getAccountMatches() {
+        return this.matches;
+    }
+    
+    math = Math;
 }
