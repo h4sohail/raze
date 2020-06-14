@@ -1,5 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
-@import "assets/bootstrap/css/bootstrap.min.css";
-@import "assets/fonts/font-awesome.min.css";
+﻿@import "assets/css/styles.css";
 
-@import "assets/css/styles.css";
+.loading-overlay {
+    left: 0 !important;
+    top: 0 !important;
+    z-index: 10000 !important;
+    width: 100% !important;
+    height: 100% !important;
+    position: fixed !important;
+    background-color: rgba(0,0,0,0.9) !important;
+    cursor: pointer !important;
+    visibility: visible !important;
+    transition: visibility 0s, opacity 0.4s linear !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: wait !important;
+}
+.loading-overlay i.fa.fa-spinner.fa-spin, .spinner-big {
+    font-size: 100px !important;
+}

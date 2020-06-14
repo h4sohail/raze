@@ -1,16 +1,20 @@
-import { AppPage } from './app.po';
+﻿import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
 
 describe('workspace-project App', () => {
   let page: AppPage;
 
-  beforeEach(() => {
+  beforeAll(() => {
     page = new AppPage();
+    page.navigateTo();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('stat-tracker app is running!');
+  it('should display navbar with app name', () => {
+    expect(page.getTitleText()).toBe('raze_gg');
+  });
+
+  it('should contain at least one template page ', () => {
+    expect(page.getNavigationElements()).toBeGreaterThanOrEqual(1);
   });
 
   afterEach(async () => {

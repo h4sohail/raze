@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Backend } from './util/backend';
 
 @Injectable()
 export class SearchService {
@@ -8,7 +7,6 @@ export class SearchService {
     constructor(private http: HttpClient) {}
 
     fetchStats() {
-        const backend = new Backend()
-        return this.http.get(backend.getSearchAPI());
+        return this.http.get('api/v1/search');
     }
 }

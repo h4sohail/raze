@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "name": {
+      "value": "raze-gg-20200614134915"
+    },
+    "appServicePlanName": {
+      "value": "raze_gg-20200614135002"
+    },
+    "tier": {
+      "value": "Basic"
+    },
+    "sku": {
+      "value": "B1"
+    },
+    "linuxFxVersion": {
+      "value": "node|10.14"
+    },
+    "subscriptionId": {
+      "value": "1246efba-240c-43a8-b8bc-6b25a7d6f6de"
+    },
+    "location": {
+      "value": "Central US"
+    }
+  }
+}
