@@ -1,13 +1,13 @@
 <section class="section-detail py-3">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 col-sm-12 col-md-3 col-lg-3">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-3">
                 <div class="card-game p-3 mb-3">
                     <div class="media" style="margin: -17px;padding: 10px;"><img class="mr-3 media-img img-fluid border"
                                                                                  src="assets/img/{{ getAccountRank() }}.png" width="90"
                                                                                  style="width: 70px;">
                         <div class="media-body text-white">
-                            <h3>{{ getAccountName() }}<br>{{ getAccountRank() }}<br></h3>
+                            <h4>{{ getAccountName() }}<br>{{ getAccountRank() }}<br></h4>
                             <p>{{ getAccountWins() }}W - {{ getAccountLosses() }}L<br>Win Ratio: 46%</p>
                             <button class="btn btn-card mr-2" (click)="fetchStats()"
                                     type="button">Update
@@ -27,7 +27,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-9 col-lg-9">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-9">
                 <div role="tablist" id="accordion-1">
                     <div class="card">
                         <div class="card-header" role="tab">
