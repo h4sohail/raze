@@ -9,7 +9,7 @@ sampleData = {
     'id': 'nullptr#0001',
     'name': 'nullptr',
     'rank': 'diamond2',
-    'wins': 4,
+    'wins': 2,
     'losses': 1,
   },
   'matches': [
