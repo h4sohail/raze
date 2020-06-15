@@ -9,6 +9,7 @@ import { Account, Match } from '../util/search.model';
 })
 export class ResultComponent implements OnInit {
     private account: Account;
+    public isJustLaunch: boolean = true;
     private matches: Match[];
 
     stats$;
@@ -45,6 +46,16 @@ export class ResultComponent implements OnInit {
     getAccountMatches() {
         return this.matches;
     }
-    
+
+    canShow(index: number): boolean {
+        let bCanShow = false;
+        if(index == 0 && this.isJustLaunch) {
+            bCanShow = true;
+            this.isJustLaunch = false;
+        }
+
+        return bCanShow;
+    }
+
     math = Math;
 }

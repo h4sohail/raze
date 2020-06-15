@@ -34,11 +34,11 @@
             <div class="col-12 col-sm-12 col-md-12 col-lg-9">
                 <div role="tablist" id="accordion-1">
                     <!-- Match History Start -->
-                    <div *ngFor="let match of getAccountMatches()" class="card">
+                    <div *ngFor="let match of getAccountMatches(); index as i" class="card">
                         <div class="card-header" role="tab">
                             <h5 class="mb-0">
-                                <a data-toggle="collapse" aria-expanded="true" aria-controls="accordion-1 .item-1"
-                                   href="#accordion-1 .item-1" class="d-flex justify-content-between text-white">
+                                <a data-toggle="collapse" 
+                                   href="#iCollapse{{i}}" class="d-flex justify-content-between text-white">
                                     <div class="first-img"><img class="img-fluid rounded-circle"
                                                                 src="assets/img/player1-1.png"></div>
                                     <div class="accor-txt align-self-center">
@@ -48,16 +48,16 @@
                                                 MVP<br></span></p>
                                     </div>
                                     <div class="accor-txt align-self-center text-center">
-                                        <h5 *ngIf="match['win']; else matchLost">WON</h5>{{ match['rounds_won'] }}-{{ match['rounds_lost'] }}
+                                        <h5 *ngIf="match['win']; else matchLost">WON<br> {{ match['rounds_won'] }}-{{ match['rounds_lost'] }}</h5>
                                     </div>
                                     <ng-template #matchLost>
-                                        DEFEAT<br>
+                                        <h5>DEFEAT<br> {{ match['rounds_won'] }}-{{ match['rounds_lost'] }}</h5>
                                     </ng-template>
                                     <div class="last-img"><img class="img-fluid" src="assets/img/city1.png"></div>
                                 </a>
                             </h5>
                         </div>
-                        <div class="collapse show item-1" role="tabpanel" data-parent="#accordion-1">
+                        <div id="iCollapse{{i}}" class="collapse {{canShow(i) ? 'show' : ''}}" role="tabpanel" data-parent="#accordion-1">
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-dark text-center">
