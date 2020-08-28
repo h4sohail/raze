@@ -1,4 +1,5 @@
 ﻿## Getting Started
+https://raze.gg/
 
 In the root directory of the project...
 
